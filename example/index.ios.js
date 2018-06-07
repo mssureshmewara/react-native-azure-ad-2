@@ -29,7 +29,9 @@ export default class azureAuth extends React.Component {
 			console.log(err);
 		})
 	}
-
+	_onRenderError() {
+               console.warn('Error');
+        }
 
     render() {
         return (
@@ -37,6 +39,7 @@ export default class azureAuth extends React.Component {
             	azureInstance={this.azureInstance}
             	loadingMessage="Requesting access token"
             	onSuccess={this._onLoginSuccess}
+		renderError={this._onRenderError}
             />
         );
     }
